@@ -13,7 +13,6 @@ body {
     z-index: 1000;
   }
   
-  /* Add some space to the content so it's not hidden behind the sticky header */
   body {
     padding-top: 60px;
   }
