@@ -100,6 +100,19 @@ ul li {
   margin-left: 5%;
 }
 
+.video-container {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  margin-top: 20px;
+}
+
+.video-container iframe {
+  position: relative;
+  margin: auto; 
+  display: block; 
+}
+
 .extra-space {
   height: 500px; 
 }
