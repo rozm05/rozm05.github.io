@@ -15,11 +15,13 @@ body {
   }
 
   .btn-group button {
-    border: 1px solid green;
+    background-color: #ffffff;
+    border: 1px solid rgb(255, 255, 255);
     color: white;
-    padding: 10px 24px;
+    padding: 0px;
     cursor: pointer;
     float: left;
+    font-size: 24px;
   }
 
   .btn-group button:not(:last-child) {
@@ -33,14 +35,5 @@ body {
   }
 
   .btn-group button:hover {
-    background-color: #3e8e41;
+    background-color: #787878;
   }
-  
-  #raiden {
-    background-image: "raiden.png";
-  }
-
-  #nahida {
-    background-image: "nahida.png";
-  }
-  
