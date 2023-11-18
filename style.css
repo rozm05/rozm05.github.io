@@ -9,65 +9,96 @@ body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     padding-top: 60px;
+    background-color: rgb(175, 197, 241);
+    background-image: url('wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
   }
   
-  .sticky-header {
-    background-color: #333;
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
+.sticky-header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  .btn-group a {
-    background-color: #ffffff;
-    border: none;
-    color: white;
-    padding: 0px;
-    cursor: pointer;
-    float: left;
-    font-size: 24px;
-    position: relative;
-    overflow: hidden;
-  }
+.btn-group a {
+  background-color: #ffffff;
+  border: none;
+  color: white;
+  padding: 0px;
+  cursor: pointer;
+  float: left;
+  font-size: 24px;
+  position: relative;
+  overflow: hidden;
+}
 
-  .btn-group a:not(:last-child) {
-    border-right: none;
-  }
+.btn-group a:not(:last-child) {
+  border-right: none;
+}
 
-  .btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
-  .btn-group a:hover {
-    background-color: #686868;
-  }
+.btn-group a:hover {
+  background-color: #686868;
+}
 
-  .btn-group a:hover .overlay-text {
-    opacity: 1;
-  }
+.btn-group a:hover .overlay-text {
+  opacity: 1;
+}
 
-  .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    opacity: 0;
-    z-index: 2;
-  }
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 2;
+}
 
-  .transparent {
-    opacity: 1;
-    height: auto;
-    display: block;
-  }
+.transparent {
+  opacity: 1;
+  height: auto;
+  display: block;
+}
 
-  .btn-group a:hover .transparent {
-    opacity: 0.3;
-  }
+.btn-group a:hover .transparent {
+  opacity: 0.3;
+}
+
+section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgb(221, 222, 247);
+}
+
+h2 {
+    color: #313d49;
+    text-align: center; 
+}
+
+p.main-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000; 
+}
+
+ul li {
+  margin-left: 5%;
+}
+
+.extra-space {
+  height: 500px; 
+}
