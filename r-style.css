@@ -25,56 +25,50 @@
     top: 0;
     z-index: 1000;
   }
-  
-  .btn-group a {
-    background-color: #ffffff;
-    border: none;
-    color: white;
-    padding: 0px;
-    cursor: pointer;
-    float: left;
-    font-size: 24px;
-    position: relative;
-    overflow: hidden;
+
+  .homepage-header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    top: 0;
+    z-index: 1000;
+  }
+  .homepage-header a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .homepage-header a:hover{
+    color: #A57ED0;
   }
   
-  .btn-group a:not(:last-child) {
-    border-right: none;
+  nav {
+    background-color: #672E43;
+    position: sticky;
+    width: 20%;
+    top: 60px;
+    left: 0;
+    overflow-y: auto;
+    z-index: 50;
   }
-  
-  .btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  
-  .btn-group a:hover {
-    background-color: #686868;
-  }
-  
-  .btn-group a:hover .overlay-text {
-    opacity: 1;
-  }
-  
-  .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    opacity: 0;
-    z-index: 2;
-  }
-  
-  .transparent {
-    opacity: 1;
-    height: auto;
+
+  nav a {
     display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
   }
-  
-  .btn-group a:hover .transparent {
-    opacity: 0.3;
+
+  nav a:hover {
+    background-color: #A57ED0;
+  }
+
+  div.section-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgb(221, 222, 247);
+    opacity: 0.9;
   }
   
   section {
@@ -82,14 +76,28 @@
     margin: 20px auto;
     padding: 20px;
     background-color: rgb(221, 222, 247);
-    opacity: 0.8;
+    opacity: 0.9;
+    text-align: center;
+  }
+
+  section.text-columns {
+    text-align: justify;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    column-gap: 20px;
   }
   
   h2 {
-      color: #313d49;
-      text-align: center; 
+    color: #313d49;
+    text-align: center; 
+    padding-top: 1%;
   }
   
+p {
+  width: 50%;
+}
+
   p.main-text {
       font-size: 16px;
       line-height: 1.6;
