@@ -1,0 +1,14 @@
+.card {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: #eee;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    line-height: 100px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
