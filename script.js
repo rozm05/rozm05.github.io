@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
         "icons/space.png", "icons/tree.png", "icons/umbrella.png"
     ];
 
+    const codeForCard = [
+        "art", "octopus", "pear", "sea", "space", "tree", "umbrella"
+    ];
+
     let selectedCards = [];
     let cardFlipped = 0;
     let isFlipped = false;
@@ -14,13 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
     createGameBoard(cards);
 
     function createGameBoard(cards) {
-        let shuffledCards = shuffleArray([...cards, ...cards]);
+        let shuffledCards = [...cards, ...cards];
     
         shuffledCards.forEach((_card, index) => {
             const cardElement = document.createElement("div");
             cardElement.classList.add("card");
             cardElement.style.backgroundImage = `url(icons/puzzle.png)`;
-            cardElement.setAttribute("data-index", index % cards.length);
+            cardElement.setAttribute("data-index", index);
+            cardElement.setAttribute("data-code", index % cards.length);
             cardElement.addEventListener("click", handleCardClick);
             gameContainer.appendChild(cardElement);
         });
@@ -33,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        clickedCard.style.backgroundImage = `url(${cards[clickedCard.getAttribute("data-index")]})`;
+        clickedCard.style.backgroundImage = `url(${cards[clickedCard.getAttribute("data-code")]})`;
         clickedCard.classList.add("flipped");
 
         selectedCards.push(clickedCard);
@@ -46,8 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkMatch() {
         const [card1, card2] = selectedCards;
-        const index1 = card1.getAttribute("data-index");
-        const index2 = card2.getAttribute("data-index");
+        const index1 = card1.getAttribute("data-code");
+        const index2 = card2.getAttribute("data-code");
 
         if (cards[index1] === cards[index2]) {
             card1.classList.add("matched");
