@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const gameContainer = document.getElementById("game-container");
+    const resetButton = document.getElementById("reset-btn");
 
     const cards = [
         {backgroundImage: 'art.png', codeName: "art"},
@@ -9,18 +10,28 @@ document.addEventListener("DOMContentLoaded", function () {
         {backgroundImage: 'space.png', codeName: "space"},
         {backgroundImage: 'tree.png', codeName: "tree"},
         {backgroundImage: 'umbrella.png', codeName: "umbrella"},
+        {backgroundImage: 'car.png', codeName: "car"},
+        {backgroundImage: 'flower.png', codeName: "flower"},
+        {backgroundImage: 'rainbow.png', codeName: "rainbow"},
+
+
         {backgroundImage: 'art.png', codeName: "art"},
         {backgroundImage: 'octopus.png', codeName: "octopus"},
         {backgroundImage: 'pear.png', codeName: "pear"},
         {backgroundImage: 'sea.png', codeName: "sea"},
         {backgroundImage: 'space.png', codeName: "space"},
         {backgroundImage: 'tree.png', codeName: "tree"},
-        {backgroundImage: 'umbrella.png', codeName: "umbrella"}
+        {backgroundImage: 'umbrella.png', codeName: "umbrella"},
+        {backgroundImage: 'car.png', codeName: "car"},
+        {backgroundImage: 'flower.png', codeName: "flower"},
+        {backgroundImage: 'rainbow.png', codeName: "rainbow"}
     ].sort(() => Math.random() - .5);
 
     let selectedCards = [];
     let isFlipped = false;
     let cardFlipped = 0;
+
+    resetButton.addEventListener("click", resetGame);
 
     createGameBoard(cards);
     
@@ -29,8 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const cardElement = document.createElement("div");
             const imageElement = document.createElement("div");
             cardElement.classList.add("card");
-            cardElement.style.backgroundColor = "cyan";
+            imageElement.classList.add("card");
+            cardElement.style.backgroundColor = "lightblue";
             imageElement.style.backgroundImage = `url(${card.backgroundImage})`;
+            imageElement.style.opacity = 0;
             imageElement.setAttribute("data-name", card.codeName);
             cardElement.addEventListener("click", handleCardClick);
             cardElement.appendChild(imageElement);
@@ -47,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const imageOfCard = clickedCard.querySelector("div");
         clickedCard.style.backgroundColor = "";
+        imageOfCard.style.opacity = 1;
         clickedCard.classList.add("flipped");
 
         selectedCards.push(clickedCard);
@@ -73,8 +87,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Gratuluji! Našli jste všechny páry.")
             }
         } else {
-            card1.style.backgroundColor = "cyan";
-            card2.style.backgroundColor = "cyan";
+            card1.style.backgroundColor = "lightblue";
+            card2.style.backgroundColor = "lightblue";
+            imageCard1.style.opacity = 0;
+            imageCard2.style.opacity = 0;
             card1.classList.remove("flipped");
             card2.classList.remove("flipped");
         }
@@ -82,4 +98,16 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedCards = [];
         isFlipped = false;
     };
+
+    function resetGame () {
+        selectedCards = [];
+        isFlipped = false;
+        cardFlipped = 0;
+        gameContainer.innerHTML = "";
+
+        cards.sort(() => Math.random() - .5);
+        createGameBoard(cards);
+    };
+
+
 });
