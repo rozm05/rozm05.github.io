@@ -100,13 +100,15 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     function resetGame () {
-        selectedCards = [];
-        isFlipped = false;
-        cardFlipped = 0;
-        gameContainer.innerHTML = "";
+        if(confirm("Chcete novou hru?") == true) {
+            selectedCards = [];
+            isFlipped = false;
+            cardFlipped = 0;
+            gameContainer.innerHTML = "";
 
-        cards.sort(() => Math.random() - .5);
-        createGameBoard(cards);
+            cards.sort(() => Math.random() - .5);
+            createGameBoard(cards);
+        }
     };
 
 
